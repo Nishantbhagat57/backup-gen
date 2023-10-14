@@ -66,7 +66,6 @@ extensions.txt (for gen1.py)
   .bak
   ```
 
-
 backup_wordlist.txt (for gen2.py)
   ```
   administration.sql
@@ -76,8 +75,7 @@ backup_wordlist.txt (for gen2.py)
   wordpress.tar.gz
   ```
 
-
-# Run gen1.py script:
+## Run gen1.py script:
 
   ```python gen1.py urls.txt extensions.txt```
 
@@ -101,9 +99,9 @@ Output:
   https://app.example.com/example_app.OLD
   ```
 
-# Run gen2.py script:
+## Run gen2.py script:
 
-python gen2.py urls.txt wordlist.txt
+   ```python gen2.py urls.txt wordlist.txt```
 
 Output:
   ```
