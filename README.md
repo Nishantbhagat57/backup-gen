@@ -77,7 +77,7 @@ backup_wordlist.txt (for gen2.py)
 
 ## Run gen1.py script:
 
-  ```python gen1.py urls.txt extensions.txt```
+  ```python gen1.py /path/to/urls.txt /path/to/extensions.txt```
 
 Output:
   ```
@@ -101,7 +101,7 @@ Output:
 
 ## Run gen2.py script:
 
-   ```python gen2.py urls.txt wordlist.txt```
+   ```python gen2.py /path/to/urls.txt /path/to/wordlist.txt```
 
 Output:
   ```
