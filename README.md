@@ -16,7 +16,7 @@
 - Generates URL combinations for potential backup files.
 - Handles large hostnames intelligently.
 - Supports multi-threading for faster processing.
-- Accepts input files for live URLs and backup file extensions.
+- Accepts input files for live URLs and backup file extensions or backup file wordlist.
 
 ## Installation
 
