@@ -1,6 +1,6 @@
 # backup-gen
 
-**Backup URL Wordlist Generator** is a useful penetration testing tool that helps generate a comprehensive list of potential backup file URLs based on a given list of live URLs and associated backup file extensions or backup file wordlist.
+**Backup Files URLs Generator** is a useful penetration testing tool that helps generate a comprehensive list of potential backup file URLs based on a given list of live URLs and associated backup file extensions or backup file wordlist.
 
 ## Table of Contents
 
