@@ -1620,3 +1620,8 @@ xcart.bak
 .xml.old
 xzcore.xz
 zemra.sql
+installer.php
+installer.PHP
+installer-backup.php
+installer-backup.PHP
+backup.php
