@@ -3,7 +3,6 @@ wp-admin.php
 wp-includes.bak
 wp-config.save
 wp-comments.zip
-wp-json.example
 sitemap.php
 robots.asp
 htaccess.aspx
