@@ -2,6 +2,7 @@
 .PHP
 .BAK
 .SAVE
+.ZIP
 .example
 .php
 .asp
