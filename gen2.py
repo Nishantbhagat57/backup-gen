@@ -26,7 +26,7 @@ def create_url_combinations(url, backup_files):
 
     for backup_file in backup_files:
         for hostname in hostname_combinations:
-            file_combinations.append(f'{hostname}.{backup_file}')
+            file_combinations.append(f'{hostname}{backup_file}')
 
     file_combinations = ct.unique(file_combinations)
 
