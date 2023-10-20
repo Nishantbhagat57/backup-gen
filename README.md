@@ -47,9 +47,18 @@ python gen.py <urls_file> <extensions_file>
 python gen.py <urls_file> <backup_wordlist_file>
 ```
 
+```
+python gen.py <urls_file> <extensions_file> --full
+```
+
+```
+python gen.py <urls_file> <backup_wordlist_file> --full
+```
+
 - ```<urls_file>:``` Path of text file containing live URLs, one per line.
 - ```<extensions_file>:``` Path of text file containing backup file extensions, one per line.
 - ```<backup_wordlist_file>:``` Path of text file containing backup file extensions, one per line.
+- - ```--full``` If used the output result will include full urls with http/https scheme.
 
 # Examples
 ### Example of input files
@@ -156,6 +165,36 @@ Command Used : ```python3 gen.py urls.txt extensions.txt```
    dev.app.db
    dev.db
    ```
+   
+Command Used : ```python3 gen.py urls.txt extensions.txt --full```
 
+- urls.txt:
+   ```
+   https://dev.app.anything.me.xyz.example.com.au
+   ```
+
+- extensions.txt
+   ```
+   .OLD
+   ```
+
+- Output result
+   ```
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example-com-au.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev-app.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.com.au.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/example.OLD
+   https://https://dev.app.anything.me.xyz.example.com.au/xyz.OLD
+   ```
 # License
 Backup Files Wordlist Generator (backup-gen) is released under the [MIT License](LICENSE).
