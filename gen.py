@@ -34,6 +34,7 @@ def parse_url(url, extensions):
     results.append(results_dash[-1] + '-' + tld_Y.replace('.', '-'))
 
     results.append(words_Z_dot[-1])
+    results.append(company_name_Z)
 
     # Concate results with extensions
     results = concat_extensions(results, extensions)
