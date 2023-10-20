@@ -58,7 +58,7 @@ python gen.py <urls_file> <backup_wordlist_file> --full
 - ```<urls_file>:``` Path of text file containing live URLs, one per line.
 - ```<extensions_file>:``` Path of text file containing backup file extensions, one per line.
 - ```<backup_wordlist_file>:``` Path of text file containing backup file extensions, one per line.
-- - ```--full``` If used the output result will include full urls with http/https scheme.
+- ```--full``` If used the output result will include full urls with http/https scheme.
 
 # Examples
 ### Example of input files
