@@ -9,6 +9,7 @@
 - [Usage](#usage)
 - [Examples](#examples)
 - [Results](#results)
+- [Generated Combinations](#generated-combinationspermutations)
 - [License](#license)
 
 ## Features
