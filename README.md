@@ -34,7 +34,7 @@
 3. Install required packages:
 
    ```bash
-   pip3 install cytoolz
+   pip3 install tldextract
    ```
 
 
