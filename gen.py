@@ -39,7 +39,7 @@ def parse_url(url, extensions, full_url=False):
 
     # Check if the full_url flag is true then append the scheme to results
     if full_url:
-        results = [scheme + '://' + url + '/' + i for i in results]
+        results = [url + '/' + i for i in results]
     # Concate results with extensions
     results = concat_extensions(results, extensions)
 
