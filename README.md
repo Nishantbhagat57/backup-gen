@@ -8,6 +8,7 @@
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
+- [Results](#results)
 - [FAQ](#faq)
 - [License](#license)
 
@@ -15,8 +16,7 @@
 
 - Generates URL combinations for potential backup files.
 - Handles large hostnames intelligently.
-- Supports multi-threading for faster processing.
-- Accepts input files for live URLs and backup file extensions or backup file wordlist.
+- Accepts input files for live URLs and backup file extensions or backup file wordlist and generates potential backup files wordlist.
 
 ## Installation
 
@@ -40,8 +40,11 @@
 
 # Usage
 ```
-python gen1.py <urls_file> <extensions_file>
-python gen2.py <urls_file> <backup_wordlist_file>
+python gen.py <urls_file> <extensions_file>
+```
+
+```
+python gen.py <urls_file> <backup_wordlist_file>
 ```
 
 - ```<urls_file>:``` A text file containing live URLs, one per line.
@@ -51,79 +54,107 @@ python gen2.py <urls_file> <backup_wordlist_file>
 
 # Examples
 
-Example of input files:
+### Example of input files
 
 urls.txt
   ```
   https://app.example.com
   http://subdomain.example.org
+  https://dev.app.anything.me.xyz.example.com.au
   ```
 
-extensions.txt (for gen1.py)
+extensions.txt
   ```
   .example
   .OLD
   .bak
   ```
 
-backup_wordlist.txt (for gen2.py)
+backup_wordlist.txt
   ```
-  administration.sql
-  admin.old
-  admin.rar
-  wordpress.sql.zip
-  wordpress.tar.gz
-  ```
-
-## Run gen1.py script:
-
-  ```python gen1.py /path/to/urls.txt /path/to/extensions.txt```
-
-Output:
-  ```
-  https://app.example.com/app.zip
-  https://app.example.com/example.zip
-  https://app.example.com/app.example.zip
-  https://app.example.com/example.app.zip
-  https://app.example.com/app-example.zip
-  https://app.example.com/example-app.zip
-  https://app.example.com/app_example.zip
-  https://app.example.com/example_app.zip
-  https://app.example.com/app.OLD
-  https://app.example.com/example.OLD
-  https://app.example.com/app.example.OLD
-  https://app.example.com/example.app.OLD
-  https://app.example.com/app-example.OLD
-  https://app.example.com/example-app.OLD
-  https://app.example.com/app_example.OLD
-  https://app.example.com/example_app.OLD
+  .administration.sql
+  .admin.old
+  .admin.rar
+  .wordpress.sql.zip
+  .wordpress.tar.gz
   ```
 
-## Run gen2.py script:
+# Generated Combinations/Permutations
 
-   ```python gen2.py /path/to/urls.txt /path/to/wordlist.txt```
+Combinations Generated for URL https://dev.app.anything.me.xyz.example.com.au
+```
+dev
+dev-app
+dev-app-anything
+dev-app-anything-me
+dev-app-anything-me-xyz
+dev-app-anything-me-xyz-example
+dev-app-anything-me-xyz-example-com-au
+dev.app
+dev.app.anything
+dev.app.anything.me
+dev.app.anything.me.xyz
+dev.app.anything.me.xyz.example
+dev.app.anything.me.xyz.example.com.au
+xyz
+```
 
-Output:
-  ```
-  https://app.example.com/app.wordpress.sql.zip
-  https://app.example.com/example.wordpress.sql.zip
-  https://app.example.com/app.example.wordpress.sql.zip
-  https://app.example.com/example.app.wordpress.sql.zip
-  https://app.example.com/app-example.wordpress.sql.zip
-  https://app.example.com/example-app.wordpress.sql.zip
-  https://app.example.com/app_example.wordpress.sql.zip
-  https://app.example.com/example_app.wordpress.sql.zip
-  https://app.example.com/app.wp-config.bk
-  https://app.example.com/example.wp-config.bk
-  https://app.example.com/app.example.wp-config.bk
-  https://app.example.com/example.app.wp-config.bk
-  https://app.example.com/app.example.wp-config.bk
-  https://app.example.com/example.app.wp-config.bk
-  https://app.example.com/app-example.wp-config.bk
-  https://app.example.com/example-app.wp-config.bk
-  https://app.example.com/app_example.wp-config.bk
-  https://app.example.com/example_app.wp-config.bk
-  ```
+# Results
+
+Command Used : ```python3 gen.py urls.txt extensions.txt```
+
+urls.txt:
+```https://dev.app.anything.me.xyz.example.com.au```
+
+extensions.txt
+```
+.OLD
+.db
+.BAK
+```
+
+Output result
+```
+dev-app-anything-me-xyz-example-com-au.BAK
+dev-app-anything-me-xyz-example-com-au.OLD
+dev-app-anything-me-xyz-example-com-au.db
+dev-app-anything-me-xyz-example.BAK
+dev-app-anything-me-xyz-example.OLD
+dev-app-anything-me-xyz-example.db
+dev-app-anything-me-xyz.BAK
+dev-app-anything-me-xyz.OLD
+dev-app-anything-me-xyz.db
+dev-app-anything-me.BAK
+dev-app-anything-me.OLD
+dev-app-anything-me.db
+dev-app-anything.BAK
+dev-app-anything.OLD
+dev-app-anything.db
+dev-app.BAK
+dev-app.OLD
+dev-app.db
+dev.BAK
+dev.OLD
+dev.app.BAK
+dev.app.OLD
+dev.app.anything.BAK
+dev.app.anything.OLD
+dev.app.anything.db
+dev.app.anything.me.BAK
+dev.app.anything.me.OLD
+dev.app.anything.me.db
+dev.app.anything.me.xyz.BAK
+dev.app.anything.me.xyz.OLD
+dev.app.anything.me.xyz.db
+dev.app.anything.me.xyz.example.BAK
+dev.app.anything.me.xyz.example.OLD
+dev.app.anything.me.xyz.example.com.au.BAK
+dev.app.anything.me.xyz.example.com.au.OLD
+dev.app.anything.me.xyz.example.com.au.db
+dev.app.anything.me.xyz.example.db
+dev.app.db
+dev.db
+```
 
 ## FAQ
 
