@@ -104,7 +104,9 @@ xyz
 Command Used : ```python3 gen.py urls.txt extensions.txt```
 
 urls.txt:
-```https://dev.app.anything.me.xyz.example.com.au```
+```
+https://dev.app.anything.me.xyz.example.com.au
+```
 
 extensions.txt
 ```
