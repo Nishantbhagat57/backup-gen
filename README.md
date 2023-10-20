@@ -180,21 +180,21 @@ Command Used : ```python3 gen.py urls.txt extensions.txt --full```
 
 - Output result
    ```
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example-com-au.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app-anything.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev-app.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.com.au.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/example.OLD
-   https://https://dev.app.anything.me.xyz.example.com.au/xyz.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example-com-au.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz-example.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me-xyz.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app-anything-me.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app-anything.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev-app.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.OLD
+   https://dev.app.anything.me.xyz.example.com.au/dev.app.anything.me.xyz.example.com.au.OLD
+   https://dev.app.anything.me.xyz.example.com.au/example.OLD
+   https://dev.app.anything.me.xyz.example.com.au/xyz.OLD
    ```
 # License
 Backup Files Wordlist Generator (backup-gen) is released under the [MIT License](LICENSE).
