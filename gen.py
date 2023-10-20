@@ -18,16 +18,21 @@ def parse_url(url, extensions):
     tld_Y = parsed_url.registered_domain
     company_name_Z = tld_Y.split(".")[0]
 
-    words_Z_dot = combinations(left_with_word_Z.replace("-", "."), '.')
-    words_Z_dash = combinations(left_with_word_Z.replace(".", "-"), '-')
+    words_Z_dot = left_with_word_Z.replace("-", ".").split(".")
+    words_Z_dash = left_with_word_Z.split("-")
+
+    results_dot = combinations(left_with_word_Z.replace("-", "."), '.')
+    results_dash = combinations(left_with_word_Z.replace(".", "-"), '-')
 
     results = []
-    results.extend(words_Z_dot)
-    results.append(words_Z_dot[-1] + '.' + company_name_Z)
-    results.append(words_Z_dot[-1] + '.' + tld_Y)
-    results.extend(words_Z_dash)
-    results.append(words_Z_dash[-1] + '-' + company_name_Z.replace(".", "-"))
-    results.append(words_Z_dash[-1] + '-' + tld_Y.replace(".", "-"))
+    results.extend(results_dot)
+    results.append(results_dot[-1] + '.' + company_name_Z)
+    results.append(results_dot[-1] + '.' + tld_Y)
+
+    results.extend(results_dash)
+    results.append(results_dash[-1] + '-' + company_name_Z.replace('.', '-'))
+    results.append(results_dash[-1] + '-' + tld_Y.replace('.', '-'))
+
     results.append(words_Z_dot[-1])
 
     # Concate results with extensions
