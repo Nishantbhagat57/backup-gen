@@ -94,6 +94,7 @@ dev.app.anything.me
 dev.app.anything.me.xyz
 dev.app.anything.me.xyz.example
 dev.app.anything.me.xyz.example.com.au
+example
 xyz
 ```
 
