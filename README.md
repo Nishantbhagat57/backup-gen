@@ -196,5 +196,14 @@ Command Used : ```python3 gen.py urls.txt extensions.txt --full```
    https://dev.app.anything.me.xyz.example.com.au/example.OLD
    https://dev.app.anything.me.xyz.example.com.au/xyz.OLD
    ```
+
+# Prompt Used
+
+This tool was made using the Power of GPT-4. The full Prompt I used to make this tool:
+
+```
+
+```
+   
 # License
 Backup Files Wordlist Generator (backup-gen) is released under the [MIT License](LICENSE).
