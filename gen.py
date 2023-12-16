@@ -4,43 +4,35 @@ import argparse
 
 def combinations(words, symbol):
     words_split = words.split(symbol)
-    results = [symbol.join(words_split[:i + 1]) for i in range(len(words_split))]
-    return results
+    # exclude the first combination when split words length is equal to 1
+    results = [symbol.join(words_split[:i + 1]) for i in range(len(words_split)) if not(i == 0 and len(words_split) == 1)]
+    return [result for result in results if result]
 
 def concat_extensions(results, extensions):
+    # filtering out any results that start with "." or "-" or are empty strings
+    results = [result for result in results if not result.startswith(("-",".")) and result] 
     extended_results = [''.join([result, extension]) for result in results for extension in extensions]
     return extended_results
 
 def parse_url(url, extensions, full_url=False):
     parsed_url = tldextract.extract(url)
-    scheme = url.split(":")[0]
+    scheme = url.split(":")[0] if ":" in url else ""
 
-    left_with_word_Z = parsed_url.subdomain
-    tld_Y = parsed_url.registered_domain
-    company_name_Z = tld_Y.split(".")[0]
+    subdomain_Z = parsed_url.subdomain
+    domain_Y = parsed_url.registered_domain
 
-    words_Z_dot = left_with_word_Z.replace("-", ".").split(".")
-    words_Z_dash = left_with_word_Z.split("-")
-
-    results_dot = combinations(left_with_word_Z.replace("-", "."), '.')
-    results_dash = combinations(left_with_word_Z.replace(".", "-"), '-')
+    results_dot = combinations(subdomain_Z.replace("-", "."), '.')
+    results_dash = combinations(subdomain_Z.replace(".", "-"), '-')
+    results_Y = [domain_Y.split(".")[0], domain_Y, domain_Y.replace(".", "-")]
 
     results = []
     results.extend(results_dot)
-    results.append(results_dot[-1] + '.' + company_name_Z)
-    results.append(results_dot[-1] + '.' + tld_Y)
-
     results.extend(results_dash)
-    results.append(results_dash[-1] + '-' + company_name_Z.replace('.', '-'))
-    results.append(results_dash[-1] + '-' + tld_Y.replace('.', '-'))
+    results.extend(results_Y)
 
-    results.append(words_Z_dot[-1])
-    results.append(company_name_Z)
+    if full_url and scheme:
+        results = [f'{scheme}://{url}/{i}' for i in results]
 
-    # Check if the full_url flag is true then append the scheme to results
-    if full_url:
-        results = [url + '/' + i for i in results]
-    # Concate results with extensions
     results = concat_extensions(results, extensions)
 
     return results
@@ -51,7 +43,6 @@ def get_extensions(ext_filepath):
         # Check if extensions start with ".", else add one
         extensions = ['.' + ext if ext[0] != '.' else ext for ext in extensions]
         return extensions
-
 
 def main():
     # Using argparse to handle CLI arguments
