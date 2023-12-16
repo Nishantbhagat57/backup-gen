@@ -31,7 +31,7 @@ def parse_url(url, extensions, full_url=False):
     results.extend(results_Y)
 
     if full_url and scheme:
-        results = [f'{scheme}://{url}/{i}' for i in results]
+        results = [f'{url}/{i}' for i in results]
 
     results = concat_extensions(results, extensions)
 
@@ -61,7 +61,6 @@ def main():
             if url:  # In case there are empty lines within file, just skip it
                 results = sorted(list(set(parse_url(url, extensions, args.full))))
                 print("\n".join(results))
-
 
 if __name__ == "__main__":
     main()
