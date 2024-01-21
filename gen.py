@@ -20,17 +20,29 @@ def parse_url(url, extensions, full_url=False):
 
     subdomain_Z = parsed_url.subdomain
     subdomain_Y = parsed_url.fqdn
+    subdomain_Y1 = "OLD." + parsed_url.fqdn
+    subdomain_Z1 = "OLD-" + parsed_url.subdomain
+    subdomain_Y12 = "OLD." + parsed_url.subdomain
+    subdomain_Z12 = "OLD-" + parsed_url.fqdn
     domain_Y = parsed_url.registered_domain
 
     results_dot = combinations(subdomain_Z.replace("-", "."), '.')
     results_dash = combinations(subdomain_Z.replace(".", "-"), '-')
     results_dot1 = combinations(subdomain_Y.replace("-", "."), '.')
     results_dash1 = combinations(subdomain_Y.replace(".", "-"), '-')
+    results_dot2 = combinations(subdomain_Y1.replace("-", "."), '.')
+    results_dash2 = combinations(subdomain_Z1.replace(".", "-"), '-')
+    results_dot21 = combinations(subdomain_Y12.replace("-", "."), '.')
+    results_dash21 = combinations(subdomain_Z12.replace(".", "-"), '-')
     results_Y = [domain_Y.split(".")[0], domain_Y, domain_Y.replace(".", "-")]
 
     results = []
     results.extend(results_dot1)
     results.extend(results_dash1)
+    results.extend(results_dot2)
+    results.extend(results_dash2)
+    results.extend(results_dot21)
+    results.extend(results_dash21)
     results.extend(results_dot)
     results.extend(results_dash)
     results.extend(results_Y)
