@@ -19,13 +19,18 @@ def parse_url(url, extensions, full_url=False):
     scheme = url.split(":")[0] if ":" in url else ""
 
     subdomain_Z = parsed_url.subdomain
+    subdomain_Y = parsed_url.fqdn
     domain_Y = parsed_url.registered_domain
 
     results_dot = combinations(subdomain_Z.replace("-", "."), '.')
     results_dash = combinations(subdomain_Z.replace(".", "-"), '-')
+    results_dot1 = combinations(subdomain_Y.replace("-", "."), '.')
+    results_dash1 = combinations(subdomain_Y.replace(".", "-"), '-')
     results_Y = [domain_Y.split(".")[0], domain_Y, domain_Y.replace(".", "-")]
 
     results = []
+    results.extend(results_dot1)
+    results.extend(results_dash1)
     results.extend(results_dot)
     results.extend(results_dash)
     results.extend(results_Y)
