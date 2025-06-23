@@ -1,4 +1,5 @@
 .7z
+.xz
 .asp
 .asp~
 .asp.bak
@@ -83,7 +84,6 @@
 .www.sql.zip
 .www.tar.gz
 .www.tmp
-.www.txt.gz
 .www.xz
 .xml
 .zip
