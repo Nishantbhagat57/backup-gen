@@ -58,6 +58,8 @@
 .swp~
 .tar
 .tar.bz2
+.tar.bzip2
+.tar.gzip
 .tar.gz
 .tgz
 .tmp
